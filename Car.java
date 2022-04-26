@@ -1,5 +1,5 @@
 /**
- * 
+ * Car class
  * @author Matt Thompson
  * date: 4/26/2022
  *
