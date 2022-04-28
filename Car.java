@@ -14,9 +14,13 @@ public class Car extends Vehicle {
 	 * @param aMake : make of the car
 	 * @param aModel : model of the car
 	 * @param aPlate : license plate of the car
+	 * @param hodor : the amount of doors in the car
+	 * @param thePass : the amount of passengers in the car
 	 */
-	public Car(String aMake, String aModel, String aPlate) {
+	public Car(String aMake, String aModel, String aPlate, int hodor, int thePass) {
 		super(aMake, aModel, aPlate);
+		this.numDoors = hodor;
+		this.numPass = thePass;
 	}
 	
 	/**
@@ -47,7 +51,7 @@ public class Car extends Vehicle {
 		}
 		
 		Car otherCar = (Car) other;
-		return this.getDoors() == otherCar.getPassengers() && super.equals(other);
+		return this.getDoors() == otherCar.getDoors() && this.getPassengers() == otherCar.getPassengers() && super.equals(other);
 	}
 	
 	/**
@@ -56,7 +60,7 @@ public class Car extends Vehicle {
 	 */
 	public Car copy() {
 
-        Car clone = new Car(super.getMake(), super.getModel(), super.getPlate());
+        Car clone = new Car(super.getMake(), super.getModel(), super.getPlate(), this.getPassengers(), this.getDoors());
         return clone;
 	}
 
